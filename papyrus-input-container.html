@@ -133,7 +133,8 @@ This element is `display:block` by default, but you can set the `inline` attribu
       }
 
       .input-content.is-invalid ::content input {
-        border: solid 1px red;
+        border: solid 1px;
+        border-color: var(--papyrus-input-container-invalid-border-color, --error-color);
       }
 
       .input-content ::content label,
