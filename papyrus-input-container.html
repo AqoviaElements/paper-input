@@ -82,6 +82,7 @@ Custom property | Description | Default
 ----------------|-------------|----------
 `--papyrus-input-container-focus-color` | Label color when the input is focused | `--primary-color`
 `--papyrus-input-container-invalid-color` | Label color when the input is is invalid | `--error-color`
+`--papyrus-input-container-invalid-border-color` Border color when the input is invalid | `--error-color`
 `--papyrus-input-container` | Mixin applied to the container | `{}`
 `--papyrus-input-container-disabled` | Mixin applied to the container when it's disabled | `{}`
 `--papyrus-input-container-label` | Mixin applied to the label | `{}`
@@ -97,7 +98,6 @@ This element is `display:block` by default, but you can set the `inline` attribu
     <style>
       :host {
         display: block;
-        padding: 8px 0;
 
         @apply(--papyrus-input-container);
       }
@@ -108,7 +108,6 @@ This element is `display:block` by default, but you can set the `inline` attribu
 
       :host([disabled]) {
         pointer-events: none;
-        opacity: 0.33;
 
         @apply(--papyrus-input-container-disabled);
       }
@@ -133,7 +132,8 @@ This element is `display:block` by default, but you can set the `inline` attribu
       }
 
       .input-content.is-invalid ::content input {
-        border: solid 1px red;
+        border: solid 1px;
+        border-color: var(--papyrus-input-container-invalid-border-color, --error-color);
       }
 
       .input-content ::content label,
