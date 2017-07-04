@@ -87,6 +87,7 @@ Custom property | Description | Default
 `--papyrus-input-container-disabled` | Mixin applied to the container when it's disabled | `{}`
 `--papyrus-input-container-label` | Mixin applied to the label | `{}`
 `--papyrus-input-container-input` | Mixin applied to the input | `{}`
+`--papyrus-input-container-input-focus` | Mixin applied to the input when it's in focus | `{}`
 `--papyrus-input-container-input-disabled` | Mixin applied to the input when it's disabled | `{}`
 
 This element is `display:block` by default, but you can set the `inline` attribute to make it
@@ -148,6 +149,10 @@ This element is `display:block` by default, but you can set the `inline` attribu
         min-width: 0;
         
         @apply(--papyrus-input-container-input);
+      }
+
+      .input-content ::content input:focus {
+        @apply(--papyrus-input-container-input-focus);
       }
 
       .input-content ::content input:disabled {
